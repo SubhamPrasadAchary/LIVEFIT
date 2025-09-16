@@ -271,6 +271,115 @@ nav {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     overflow: hidden;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    .food-items {
+        margin: 1rem 0;
+        width: 100%;
+        overflow-x: auto;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+
+            th, td {
+                padding: 0.75rem;
+                text-align: left;
+                border-bottom: 1px solid var(--medium-gray);
+            }
+
+            th {
+                font-weight: 600;
+                color: var(--dark-gray);
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                background-color: var(--light-gray);
+            }
+
+            tr:hover {
+                background-color: rgba(0, 0, 0, 0.02);
+            }
+
+            .actions {
+                text-align: center;
+                width: 50px;
+            }
+
+            .remove-food {
+                background: none;
+                border: none;
+                color: var(--dark-gray);
+                cursor: pointer;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                transition: var(--transition);
+
+                &:hover {
+                    color: #e74c3c;
+                    background-color: rgba(231, 76, 60, 0.1);
+                }
+            }
+        }
+    }
+
+    .food-form {
+        margin: 1.5rem 0;
+        background-color: var(--light-gray);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th, td {
+                padding: 0.5rem;
+                text-align: left;
+            }
+
+            th {
+                font-weight: 600;
+                font-size: 0.8rem;
+                color: var(--dark-gray);
+                text-transform: uppercase;
+            }
+
+            input[type="text"],
+            input[type="number"] {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid var(--medium-gray);
+                border-radius: 4px;
+                font-family: inherit;
+                font-size: 0.9rem;
+
+                &:focus {
+                    outline: none;
+                    border-color: var(--primary-color);
+                    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+                }
+            }
+
+            .form-actions {
+                display: flex;
+                gap: 0.5rem;
+                justify-content: flex-end;
+            }
+
+            .btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+
+                &-sm {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
     transition: var(--transition);
 }
 
@@ -303,15 +412,138 @@ nav {
     padding: 1.5rem;
 }
 
-.food-items li {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid var(--medium-gray);
+.food-items {
+    min-height: 60px;
 }
 
-.food-items li:last-child {
-    border-bottom: none;
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.food-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.food-info {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.food-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.food-macros {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    display: block;
+}
+
+.food-calories {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0 1rem;
+}
+
+.remove-food {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: var(--transition);
+    padding: 0.3rem;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-food:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+    opacity: 1;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.food-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.food-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.food-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.food-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Empty state */
+.food-items:empty::before {
+    content: 'No food items added yet';
+    display: block;
+    text-align: center;
+    color: var(--dark-gray);
+    padding: 2rem 0;
+    font-style: italic;
 }
 
 .btn-add-food {
