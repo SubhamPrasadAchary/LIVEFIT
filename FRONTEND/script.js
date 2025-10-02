@@ -2,7 +2,6 @@
 const navLinks = document.querySelectorAll('.nav-links a');
 const mealCards = document.querySelectorAll('.meal-card');
 const addFoodButtons = document.querySelectorAll('.btn-add-food');
-
 // Smooth scrolling for navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
