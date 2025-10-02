@@ -1,0 +1,103 @@
+[
+    {
+      "name": "idli",
+      "nutrients": { "calories": 58, "protein_g": 2.0, "carbs_g": 12.0, "fats_g": 0.2 }
+    },
+    {
+      "name": "dosa",
+      "nutrients": { "calories": 168, "protein_g": 4.1, "carbs_g": 31.1, "fats_g": 2.6 }
+    },
+    {
+      "name": "uttapam",
+      "nutrients": { "calories": 194, "protein_g": 4.8, "carbs_g": 35.2, "fats_g": 3.8 }
+    },
+    {
+      "name": "vada",
+      "nutrients": { "calories": 185, "protein_g": 6.0, "carbs_g": 18.0, "fats_g": 10.0 }
+    },
+    {
+      "name": "samosa, fried",
+      "nutrients": { "calories": 252, "protein_g": 5.6, "carbs_g": 27.1, "fats_g": 13.4 }
+    },
+    {
+      "name": "pakora",
+      "nutrients": { "calories": 316, "protein_g": 8.0, "carbs_g": 34.0, "fats_g": 16.0 }
+    },
+    {
+      "name": "chole bhature",
+      "nutrients": { "calories": 427, "protein_g": 12.0, "carbs_g": 45.0, "fats_g": 20.0 }
+    },
+    {
+      "name": "pav bhaji",
+      "nutrients": { "calories": 400, "protein_g": 9.0, "carbs_g": 45.0, "fats_g": 18.0 }
+    },
+    {
+      "name": "biryani",
+      "nutrients": { "calories": 290, "protein_g": 8.1, "carbs_g": 45.9, "fats_g": 8.6 }
+    },
+    {
+      "name": "gulab jamun (sweet)",
+      "nutrients": { "calories": 175, "protein_g": 2.5, "carbs_g": 30.0, "fats_g": 7.5 }
+    },
+    {
+      "name": "rasgulla",
+      "nutrients": { "calories": 186, "protein_g": 4.0, "carbs_g": 38.0, "fats_g": 3.0 }
+    },
+    {
+      "name": "jalebi",
+      "nutrients": { "calories": 150, "protein_g": 1.0, "carbs_g": 36.0, "fats_g": 0.5 }
+    },
+    {
+      "name": "laddu",
+      "nutrients": { "calories": 220, "protein_g": 3.0, "carbs_g": 28.0, "fats_g": 10.0 }
+    },
+    {
+      "name": "barfi",
+      "nutrients": { "calories": 210, "protein_g": 4.0, "carbs_g": 25.0, "fats_g": 11.0 }
+    },
+    {
+      "name": "halwa",
+      "nutrients": { "calories": 240, "protein_g": 3.0, "carbs_g": 32.0, "fats_g": 11.0 }
+    },
+    {
+      "name": "kheer",
+      "nutrients": { "calories": 150, "protein_g": 4.0, "carbs_g": 28.0, "fats_g": 4.0 }
+    },
+    {
+      "name": "pani puri",
+      "nutrients": { "calories": 329, "protein_g": 6.0, "carbs_g": 67.0, "fats_g": 6.0 }
+    },
+    {
+      "name": "sev puri",
+      "nutrients": { "calories": 367, "protein_g": 7.0, "carbs_g": 62.0, "fats_g": 12.0 }
+    },
+    {
+      "name": "poha",
+      "nutrients": { "calories": 180, "protein_g": 4.0, "carbs_g": 30.0, "fats_g": 4.0 }
+    },
+    {
+      "name": "paneer curry",
+      "nutrients": { "calories": 265, "protein_g": 11.0, "carbs_g": 15.0, "fats_g": 18.0 }
+    },
+    {
+      "name": "palak paneer",
+      "nutrients": { "calories": 240, "protein_g": 9.0, "carbs_g": 12.0, "fats_g": 18.0 }
+    },
+    {
+      "name": "butter chicken",
+      "nutrients": { "calories": 290, "protein_g": 12.0, "carbs_g": 10.0, "fats_g": 22.0 }
+    },
+    {
+      "name": "chicken tikka",
+      "nutrients": { "calories": 280, "protein_g": 25.0, "carbs_g": 5.0, "fats_g": 18.0 }
+    },
+    {
+      "name": "mutton curry",
+      "nutrients": { "calories": 330, "protein_g": 20.0, "carbs_g": 10.0, "fats_g": 24.0 }
+    },
+    {
+      "name": "fish curry",
+      "nutrients": { "calories": 200, "protein_g": 20.0, "carbs_g": 5.0, "fats_g": 12.0 }
+    }
+  ]
+  
