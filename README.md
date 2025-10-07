@@ -105,7 +105,20 @@ PORT=5001
 
 ### 4. Frontend Setup
 
-The frontend is static HTML/CSS/JS files located in the `public` folder. No additional setup required.
+1.Navigate to your project directory:
+```bash
+cd C:\Users\MNC\LIVEFIT\FRONTEND
+```
+2.Install dependencies (if not already installed)
+```bash
+npm install
+```
+3.Start the server (from the FRONTEND directory)
+```bash
+npm start
+```
+Automatically opens in your default browser at http://localhost:3000
+If it doesn't open automatically, manually go to http://localhost:3000
 
 ## 🎬 Running the Project
 
