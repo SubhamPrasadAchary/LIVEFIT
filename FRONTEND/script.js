@@ -1,7 +1,34 @@
-// DOM Elements
-const navLinks = document.querySelectorAll('.nav-links a');
-const mealCards = document.querySelectorAll('.meal-card');
-const addFoodButtons = document.querySelectorAll('.btn-add-food');
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Check for saved user preference
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+
+// Update the toggle icon based on current theme
+function updateToggleIcon() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    document.querySelector('.fa-moon').style.display = isDark ? 'none' : 'block';
+    document.querySelector('.fa-sun').style.display = isDark ? 'block' : 'none';
+}
+
+// Toggle theme
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    // Update the theme
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Update the toggle icon
+    updateToggleIcon();
+});
+
+// Initialize the toggle icon
+updateToggleIcon();
 // Handle navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
