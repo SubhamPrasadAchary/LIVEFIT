@@ -30,8 +30,12 @@ Eat smart. Stay fit. Live better. — LIVEFIT ❤️
 ## 🛠️ Tech Stack
 
 ### Frontend
-- HTML5, CSS3, JavaScript
-- Responsive UI/UX Design
+- HTML5, CSS3, JavaScript (ES6+)
+- Vite - Next Generation Frontend Tooling
+- Chart.js - For data visualization
+- Responsive & Accessible UI/UX Design
+- Font Awesome Icons
+- Google Fonts Integration
 
 ### Backend
 - Node.js & Express.js
@@ -125,7 +129,7 @@ npm install
 ```
 3.Start the server (from the FRONTEND directory)
 ```bash
-npm start
+npm run dev
 ```
 Automatically opens in your default browser at http://localhost:3000
 If it doesn't open automatically, manually go to http://localhost:3000
