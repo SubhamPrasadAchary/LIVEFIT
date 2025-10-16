@@ -154,11 +154,19 @@
             <div class="footer-section">
                 <h4>Connect With Us</h4>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC_A7K2dXFsTMAciGmnNxy-Q" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-youtube"></i></a>
                 </div>
+                <script>
+                    // Ensure social links open in new tab
+                    document.querySelectorAll('.social-link').forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            window.open(link.href, '_blank', 'noopener,noreferrer');
+                        });
+                    });
+                </script>
             </div>
         </div>
         <div class="footer-bottom">
@@ -167,6 +175,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="/script.js"></script>
 </body>
 </html>
