@@ -2,19 +2,36 @@
 const navLinks = document.querySelectorAll('.nav-links a');
 const mealCards = document.querySelectorAll('.meal-card');
 const addFoodButtons = document.querySelectorAll('.btn-add-food');
-// Smooth scrolling for navigation links
+// Handle navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+        const href = link.getAttribute('href');
         
-        // Update active link
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-        link.classList.add('active');
-        
-        // Smooth scroll to section
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        // Only handle internal navigation links (starting with #)
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(href);
+            
+            if (targetSection) {
+                // Update active link
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Smooth scroll to section
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        // External links will be handled by their default behavior
+    });
+});
+
+// Ensure all external links with target="_blank" have proper security attributes
+document.addEventListener('DOMContentLoaded', () => {
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+        if (!link.hasAttribute('rel') || !link.getAttribute('rel').includes('noopener')) {
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
     });
 });
 
