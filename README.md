@@ -4,6 +4,10 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Version](https://img.shields.io/badge/version-1.0.0-orange)
 
+<img width="1762" height="840" alt="image" src="https://github.com/user-attachments/assets/0936ae5c-b36c-4c95-bab2-c1e7c8ff9d03" />
+<img width="1724" height="727" alt="image" src="https://github.com/user-attachments/assets/4f384f0c-8b53-482e-8d28-86d8fc80ad7e" />
+
+
 ## 📖 About
 
 LIVEFIT isn’t just another fitness app — it’s your AI-powered wellness partner built to make healthy living effortless, smart, and motivating! 🌱🚀
