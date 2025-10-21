@@ -276,7 +276,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Hugging Face for ML models
 - USDA FoodData Central
 - All contributors and supporters
-
 ---
 
 ⭐ If you find this project helpful, please give it a star!
