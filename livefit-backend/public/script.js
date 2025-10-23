@@ -5,10 +5,8 @@ let totalCalories = 0;
 let totalProtein = 0;
 let totalCarbs = 0;
 let totalFats = 0;
-
 let authToken = localStorage.getItem("authToken") || null;
 let currentUsername = localStorage.getItem("username") || null;
-
 let nutritionChart = null; // Chart.js instance
 
 // ==================== LOAD USER MEALS ON PAGE LOAD ====================
