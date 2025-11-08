@@ -1,4 +1,4 @@
-# 🏋️ LIVEFIT - Smart Nutrition Tracker
+# 🏋️ LIVEFIT - Smart Nutrition Tracker 
 
 ![LIVEFIT Banner](https://img.shields.io/badge/LIVEFIT-Nutrition%20Tracker-green) 
 ![License](https://img.shields.io/badge/license-MIT-blue) 
