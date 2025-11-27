@@ -13,7 +13,6 @@ function updateToggleIcon() {
     document.querySelector('.fa-moon').style.display = isDark ? 'none' : 'block';
     document.querySelector('.fa-sun').style.display = isDark ? 'block' : 'none';
 }
-
 // Toggle theme
 themeToggle.addEventListener('click', () => {
     const currentTheme = html.getAttribute('data-theme');
