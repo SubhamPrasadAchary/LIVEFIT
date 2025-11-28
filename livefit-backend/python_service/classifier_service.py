@@ -21,7 +21,6 @@ async def classify(file: UploadFile = File(...)):
         # Read uploaded image
         contents = await file.read()
         image = Image.open(io.BytesIO(contents)).convert("RGB")
-
         # Preprocess
         inputs = processor(images=image, return_tensors="pt")
 
