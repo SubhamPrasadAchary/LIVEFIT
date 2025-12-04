@@ -133,7 +133,7 @@ npm install
 ```
 3.Start the server (from the FRONTEND directory)
 ```bash
-npm start
+npx vite
 ```
 Automatically opens in your default browser at http://localhost:3000
 If it doesn't open automatically, manually go to http://localhost:3000
