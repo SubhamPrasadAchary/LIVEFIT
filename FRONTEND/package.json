@@ -15,5 +15,15 @@
   "devDependencies": {
     "live-server": "^1.2.2",
     "vite": "^7.1.10"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@react-spring/three": "^10.0.3",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
+    "framer-motion": "^12.23.25",
+    "styled-components": "^6.1.19",
+    "three": "^0.181.2"
   }
 }
