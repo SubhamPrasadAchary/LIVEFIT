@@ -13,6 +13,7 @@ function updateToggleIcon() {
     document.querySelector('.fa-moon').style.display = isDark ? 'none' : 'block';
     document.querySelector('.fa-sun').style.display = isDark ? 'block' : 'none';
 }
+
 // Toggle theme
 themeToggle.addEventListener('click', () => {
     const currentTheme = html.getAttribute('data-theme');
@@ -482,6 +483,19 @@ function init() {
     updateStatCard('carbs', 0, 300);
     updateStatCard('fats', 0, 90);
 }
+
+// Hide loader when page is fully loaded
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        // Add 'hidden' class to trigger fade out
+        loader.classList.add('hidden');
+        // Remove loader from DOM after animation completes
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Match this with the CSS transition duration
+    }
+});
 
 // Initialize the application
 init();
