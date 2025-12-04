@@ -4,22 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiveFit - Your Personal Nutrition Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Particle.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="cyberpunk.css">
+    <style>
+        /* Initial loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loader-text {
+            color: var(--neon-blue);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .loader-bar {
+            position: absolute;
+            bottom: 30%;
+            width: 200px;
+            height: 4px;
+            background: var(--dark-gray);
+            overflow: hidden;
+        }
+        .loader-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            transform: translateX(-100%);
+            animation: loading 2s ease-in-out infinite;
+        }
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scanlines Overlay -->
+    <div class="scanlines"></div>
+
     <header>
         <nav>
             <div class="nav-left">
-                <div class="logo">
-                    <i class="fas fa-heartbeat"></i>
-                    <span>LiveFit</span>
-                </div>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                     <i class="fas fa-sun"></i>
                 </button>
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>LiveFit</span>
+                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#dashboard" class="active">Dashboard</a></li>
@@ -35,13 +97,13 @@
     </header>
     <main>
         <section class="hero">
+            <div class="hero-image">
+                <img src="https://static.vecteezy.com/system/resources/previews/021/534/411/non_2x/healthy-food-on-old-wooden-background-concept-of-proper-nutrition-top-view-flat-lay-photo.jpg" alt="Healthy food illustration">
+            </div>
             <div class="hero-content">
                 <h1>Track Your Nutrition, Transform Your Life</h1>
                 <p>Monitor your daily food intake, count calories, and achieve your fitness goals with LiveFit.</p>
                 <button class="btn btn-primary btn-lg">Get Started - It's Free</button>
-            </div>
-            <div class="hero-image">
-                <img src="https://static.vecteezy.com/system/resources/previews/021/534/411/non_2x/healthy-food-on-old-wooden-background-concept-of-proper-nutrition-top-view-flat-lay-photo.jpg" alt="Healthy food illustration">
             </div>
         </section>
         <section id="dashboard" class="dashboard">
@@ -153,7 +215,7 @@
                 <h4>Support</h4>
                 <ul>
                     <li><a href="#">Help Center</a></li>
-                    <li></li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nutrition.livefit@gmail.com&su=Contact%20Us%20-%20LiveFit%20Support&body=Hello%20LiveFit%20Team,%0D%0A%0D%0A" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+                    <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nutrition.livefit@gmail.com&su=Contact%20Us%20-%20LiveFit%20Support&body=Hello%20LiveFit%20Team,%0D%0A%0D%0A" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
                 </ul>
@@ -182,6 +244,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="/script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
