@@ -1,3 +1,8 @@
+// DOM Elements
+const navLinks = document.querySelectorAll('nav a');
+const addFoodButtons = document.querySelectorAll('.btn-add-food');
+const mealCards = document.querySelectorAll('.meal-card');
+
 // Theme Toggle Functionality
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
@@ -498,4 +503,5 @@ window.addEventListener('load', () => {
 });
 
 // Initialize the application
+init();
 init();
