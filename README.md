@@ -4,7 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-blue) 
 ![Version](https://img.shields.io/badge/version-1.0.0-orange) 
 
-<img width="1762" height="840" alt="image" src="https://github.com/user-attachments/assets/0936ae5c-b36c-4c95-bab2-c1e7c8ff9d03" />
+<img width="1718" height="834" alt="image" src="https://github.com/user-attachments/assets/aa6ebc7c-8b0c-4aa8-a33a-678911797cbd" />
+
 <img width="1718" height="888" alt="image" src="https://github.com/user-attachments/assets/5a51f040-80cd-4f1a-87fc-ad8fb9a6096e" />
 
 
