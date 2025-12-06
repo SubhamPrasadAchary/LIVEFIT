@@ -8,11 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Particle.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Custom Styles -->
     <link rel="stylesheet" href="cyberpunk.css">
     <style>
+        /* Root element for React app */
+        #root {
+            position: relative;
+            z-index: 1;
+        }
+        
         /* Initial loading animation */
         .loader {
             position: fixed;
@@ -64,11 +68,13 @@
     </style>
 </head>
 <body>
+    <!-- Root div for React -->
+    <div id="root">
+        <!-- Existing content will be moved here by React -->
+    </div>
 
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
-    <!-- Scanlines Overlay -->
+    <!-- Scripts -->
+    <script type="module" src="/src/index.js"></script>
     <div class="scanlines"></div>
 
     <header>
@@ -239,11 +245,6 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 LiveFit. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js" defer></script>
 </body>
 </html>
