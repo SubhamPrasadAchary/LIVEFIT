@@ -15,236 +15,67 @@
         #root {
             position: relative;
             z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
-        /* Initial loading animation */
+        /* Loading animation */
         .loader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--dark-bg);
+            background: #0f172a;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease-out;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
         }
         .loader.hidden {
             opacity: 0;
-            pointer-events: none;
+            visibility: hidden;
         }
-        .loader-text {
-            color: var(--neon-blue);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
+        .loader-logo {
+            font-size: 2.5rem;
+            color: #3b82f6;
             text-transform: uppercase;
-        }
-        .loader-bar {
-            position: absolute;
-            bottom: 30%;
-            width: 200px;
-            height: 4px;
-            background: var(--dark-gray);
-            overflow: hidden;
-        }
-        .loader-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
-            transform: translateX(-100%);
-            animation: loading 2s ease-in-out infinite;
-        }
-        @keyframes loading {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            font-family: 'Orbitron', sans-serif;
         }
     </style>
 </head>
 <body>
-    <!-- Root div for React -->
-    <div id="root">
-        <!-- Existing content will be moved here by React -->
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">LiveFit</div>
+            <div class="loader-bar"></div>
+        </div>
     </div>
 
+    <!-- Root div for React -->
+    <div id="root"></div>
+
     <!-- Scripts -->
-    <script type="module" src="/src/index.js"></script>
-    <div class="scanlines"></div>
-
-    <header>
-        <nav>
-            <div class="nav-left">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-                <div class="logo">
-                    <i class="fas fa-heartbeat"></i>
-                    <span>LiveFit</span>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#dashboard" class="active">Dashboard</a></li>
-                <li><a href="#tracker">Meal Tracker</a></li>
-                <li><a href="#nutrition">Nutrition</a></li>
-                <li><a href="#profile">Profile</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn btn-outline">Log In</button>
-                <button class="btn btn-primary">Sign Up</button>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="hero-image">
-                <img src="https://static.vecteezy.com/system/resources/previews/021/534/411/non_2x/healthy-food-on-old-wooden-background-concept-of-proper-nutrition-top-view-flat-lay-photo.jpg" alt="Healthy food illustration">
-            </div>
-            <div class="hero-content">
-                <h1>Track Your Nutrition, Transform Your Life</h1>
-                <p>Monitor your daily food intake, count calories, and achieve your fitness goals with LiveFit.</p>
-                <button class="btn btn-primary btn-lg">Get Started - It's Free</button>
-            </div>
-        </section>
-        <section id="dashboard" class="dashboard">
-            <h2>Your Daily Summary</h2>
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">Calories</div>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <div class="stat-goal">Goal: 2,000</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0g</div>
-                    <div class="stat-label">Protein</div>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <div class="stat-goal">Goal: 120g</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0g</div>
-                    <div class="stat-label">Carbs</div>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <div class="stat-goal">Goal: 300g</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0g</div>
-                    <div class="stat-label">Fats</div>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <div class="stat-goal">Goal: 90g</div>
-                </div>
-            </div>
-        </section>
-        <section id="tracker" class="meal-tracker">
-            <h2>Today's Meals</h2>
-            <div class="meal-cards">
-                <div class="meal-card">
-                    <div class="meal-header">
-                        <h3>Breakfast</h3>
-                        <span class="meal-calories">0 cal</span>
-                    </div>
-                    <ul class="food-items">
-                        
-                    </ul>
-                    <button class="btn-add-food"><i class="fas fa-plus"></i> Add Food</button>
-                </div>
-                <div class="meal-card">
-                    <div class="meal-header">
-                        <h3>Lunch</h3>
-                        <span class="meal-calories">0 cal</span>
-                    </div>
-                    <ul class="food-items">
-                    </ul>
-                    <button class="btn-add-food"><i class="fas fa-plus"></i> Add Food</button>
-                </div>
-                <div class="meal-card">
-                    <div class="meal-header">
-                        <h3>Dinner</h3>
-                        <span class="meal-calories">0 cal</span>
-                    </div>
-                    <ul class="food-items">
-                    </ul>
-                    <button class="btn-add-food"><i class="fas fa-plus"></i> Add Food</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="nutrition" class="nutrition-insights">
-            <h2>Nutrition Insights</h2>
-            <div class="insights-container">
-                <div class="chart-container">
-                    <canvas id="nutritionChart"></canvas>
-                </div>
-                <div class="nutrition-tips">
-                    <h3>Today's Tips</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> <strong>Great job on your protein intake!</strong> Keep it up to support muscle growth and recovery.</li>
-                        <li><i class="fas fa-info-circle"></i> <strong>Boost your fiber intake</strong> with whole grains, fruits, and vegetables for better digestion.</li>
-                        <li><i class="fas fa-tint"></i> <strong>Stay hydrated!</strong> Aim for at least 8 glasses of water today to maintain optimal health.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>LiveFit</h4>
-                <p>Your personal nutrition and fitness companion.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nutrition.livefit@gmail.com&su=Contact%20Us%20-%20LiveFit%20Support&body=Hello%20LiveFit%20Team,%0D%0A%0D%0A" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Connect With Us</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61584737936696" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-facebook"></i></a>
-                    <a href="https://x.com/_Live_fit_" class="social-link" target="_blank" rel="noopener noreferrer nofollow" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 20px; height: 20px; fill: currentColor;"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg></a>
-                    <a href="https://www.instagram.com/livefit_nutritionapp/" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@LiveFitNutrition-d2i" class="social-link" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-youtube"></i></a>
-                </div>
-                <script>
-                    // Ensure social links open in new tab
-                    document.querySelectorAll('.social-link').forEach(link => {
-                        link.addEventListener('click', (e) => {
-                            window.open(link.href, '_blank', 'noopener,noreferrer');
-                        });
-                    });
-                </script>
-            </div>
-        </div>
-        <div class="footer-bottom">
+    <script type="module" src="/src/index.jsx"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Hide loader when page is fully loaded
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('hidden');
+                // Remove loader from DOM after animation completes
+                setTimeout(() => {
+                    loader.remove();
+                }, 500);
+            }
+        });
+    </script>
 </body>
 </html>
