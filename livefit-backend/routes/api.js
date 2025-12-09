@@ -15,7 +15,7 @@ router.post("/identify", upload.single("image"), async (req, res) => {
     console.log("🔍 API /identify called");
     console.log("📝 Text name provided:", guessedName ? "Yes" : "No");
     console.log("🖼️ Image file provided:", imageFile ? "Yes" : "No");
-    
+  
     // If no text name → classify image
     if (!guessedName && imageFile) {
       console.log("🤖 Attempting image classification...");
