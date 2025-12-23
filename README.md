@@ -7,7 +7,7 @@
 <img width="1718" height="834" alt="image" src="https://github.com/user-attachments/assets/aa6ebc7c-8b0c-4aa8-a33a-678911797cbd" />
 <img width="1718" height="888" alt="image" src="https://github.com/user-attachments/assets/5a51f040-80cd-4f1a-87fc-ad8fb9a6096e" />
 
-## 📖 About
+## 📖 About 
 
 LIVEFIT isn’t just another fitness app — it’s your AI-powered wellness partner built to make healthy living effortless, smart, and motivating! 🌱🚀
 
