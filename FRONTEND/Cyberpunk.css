@@ -245,7 +245,6 @@ nav {
     background: rgba(5, 217, 232, 0.1);
     border-color: var(--neon-blue);
 }
-
 .nav-links a::after {
     content: '';
     position: absolute;
