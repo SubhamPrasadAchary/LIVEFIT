@@ -8,4 +8,4 @@ Provides nutrition lookup using:
 1. Copy frontend files into `public/`
 2. `cp .env.example .env` and set USDA_API_KEY
 3. `npm install`
-4. `npm start`
+4. `npm start` 
