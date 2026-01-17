@@ -272,7 +272,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Indian Food Composition Tables (IFCT)
 - Hugging Face for ML models
-- USDA FoodData Central
+- USDA FoodData Central 
 - All contributors and supporters
 ---
 
