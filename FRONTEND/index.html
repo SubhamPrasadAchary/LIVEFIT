@@ -88,6 +88,7 @@
                 <li><a href="#tracker">Meal Tracker</a></li>
                 <li><a href="#nutrition">Nutrition</a></li>
                 <li><a href="#profile">Profile</a></li>
+                <li><a href="#" id="about-link" onclick="return false;">About Us</a></li>
             </ul>
             <div class="auth-buttons">
                 <button class="btn btn-outline">Log In</button>
@@ -195,6 +196,25 @@
         </section>
     </main>
 
+    <!-- About Us Popup -->
+    <div id="about-popup" class="popup-overlay" style="display: none; opacity: 0;">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p>LiveFit is a smart nutrition and fitness platform created to help people understand their 
+daily food intake and make healthier lifestyle choices.</p>
+                
+                <p>Our goal is to simplify nutrition tracking by presenting data in a clear, visual, and user-
+friendly way. LiveFit allows users to monitor essential nutrients, receive daily health tips, 
+and stay motivated throughout their fitness journey.</p>
+                
+                <p>Designed as a complete solution, LiveFit supports everyone—from beginners to fitness-
+conscious individuals—by promoting balance, consistency, and long-term wellness.</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -214,7 +234,7 @@
 
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="#">Help Center</a></li>
+                    
                     <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nutrition.livefit@gmail.com&su=Contact%20Us%20-%20LiveFit%20Support&body=Hello%20LiveFit%20Team,%0D%0A%0D%0A" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
@@ -244,6 +264,153 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js" defer></script>
+    <script src="cyberpunk.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutPopup = document.getElementById('about-popup');
+            const aboutLink = document.getElementById('about-link');
+            const closeBtn = document.querySelector('.close-btn');
+
+            function showPopup() {
+                aboutPopup.style.display = 'flex';
+                setTimeout(() => aboutPopup.style.opacity = '1', 10);
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hidePopup() {
+                aboutPopup.style.opacity = '0';
+                setTimeout(() => {
+                    aboutPopup.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+
+            aboutLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showPopup();
+                return false;
+            });
+
+            closeBtn.addEventListener('click', hidePopup);
+
+            aboutPopup.addEventListener('click', function(e) {
+                if (e.target === aboutPopup) hidePopup();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && aboutPopup.style.display === 'flex') {
+                    hidePopup();
+                }
+            });
+        });
+    </script>
+    <style>
+        /* Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .popup-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .popup-content {
+            background: var(--dark-bg);
+            color: var(--text-color);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue-glow);
+            position: relative;
+        }
+
+        .popup-content h2 {
+            color: var(--neon-pink);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .popup-content h3 {
+            color: var(--neon-blue);
+            margin: 1.5rem 0 1rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .popup-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .popup-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .popup-content li:before {
+            content: '→';
+            color: var(--neon-green);
+            position: absolute;
+            left: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--neon-pink);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--neon-red);
+        }
+
+        /* Custom scrollbar for popup */
+        .popup-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .popup-content::-webkit-scrollbar-track {
+            background: var(--dark-gray);
+            border-radius: 4px;
+        }
+
+        .popup-content::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+            border-radius: 4px;
+        }
+
+        .popup-content::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink);
+        }
+    </style>
 </body>
 </html>
