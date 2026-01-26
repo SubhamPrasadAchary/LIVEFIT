@@ -5,7 +5,7 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-orange)  
 
 <img width="1718" height="888" alt="Screenshot 2026-01-17 221514" src="https://github.com/user-attachments/assets/4e01f590-2eae-46cf-8e2b-5e11ec163f2b" />
- 
+  
 ## 📖 About 
 
 LIVEFIT isn’t just another fitness app — it’s your AI-powered wellness partner built to make healthy living effortless, smart, and motivating! 🌱🚀
