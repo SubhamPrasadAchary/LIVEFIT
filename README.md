@@ -20,7 +20,7 @@ LIVEFIT isn’t just an app — it’s your digital fitness coach, your nutritio
 
 Eat smart. Stay fit. Live better. — LIVEFIT ❤️
 
-## ✨ Features
+## ✨ Features 
 
 - 📸 **Image-based Food Recognition**: Upload food photos for instant calorie calculation
 - 🍽️ **Manual Food Logging**: Log meals by dish name and quantity
